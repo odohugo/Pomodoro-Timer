@@ -1,0 +1,46 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:PomodoroTimer.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="vm:SettingsViewModel"
+             x:Class="PomodoroTimer.Views.SettingsView">
+    
+        <Design.DataContext>
+                <vm:SettingsViewModel></vm:SettingsViewModel>
+        </Design.DataContext>
+    
+    <Viewbox Height="450">
+        <Border Background="{DynamicResource PrimarySettingsFill}" BorderBrush="{DynamicResource PrimaryBorder}" BorderThickness="2" Margin="10" CornerRadius="10" Padding="45, 30, 45, 30" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Spacing="25">
+                <StackPanel>
+                    <Label Content="Short break duration in minutes"></Label>
+                    <NumericUpDown Value="{Binding ShortBreakDurationSetting, Mode=TwoWay}" Increment="1" ParsingNumberStyle="Integer" Minimum="1"></NumericUpDown>
+                </StackPanel>
+                
+                <StackPanel>
+                <Label Content="Long break duration in minutes"></Label>
+                <NumericUpDown Value="{Binding LongBreakDurationSetting, Mode=TwoWay}" Increment="1" ParsingNumberStyle="Integer" Minimum="1"></NumericUpDown>
+                </StackPanel>
+                
+                <StackPanel>
+                <Label Content="Work duration in minutes"></Label>
+                <NumericUpDown Value="{Binding WorkDurationSetting, Mode=TwoWay}" Increment="1" ParsingNumberStyle="Integer" Minimum="1"></NumericUpDown>
+                </StackPanel>
+                
+                <StackPanel>
+                <Label Content="How many pomodoros until long break"></Label>
+                <NumericUpDown Value="{Binding PomodoroAmountSetting, Mode=TwoWay}" Increment="1" ParsingNumberStyle="Integer" Minimum="1"></NumericUpDown>
+                </StackPanel>
+                
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="5">
+                    <Label Content="Start next timer automatically" VerticalContentAlignment="Center"></Label>
+                    <CheckBox IsChecked="{Binding AutoStartTimerSetting, Mode=TwoWay}"/>
+                </StackPanel>
+                <Button Content="Save Settings" Click="SaveSettingsButton_OnClick"></Button>
+            </StackPanel>
+        </Border>
+    </Viewbox>
+    
+</UserControl>

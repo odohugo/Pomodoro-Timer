@@ -1,0 +1,43 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:PomodoroTimer.ViewModels"
+             x:DataType="vm:TimerViewModel"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="PomodoroTimer.Views.TimerView">
+        
+        <Design.DataContext>
+                <vm:TimerViewModel></vm:TimerViewModel>
+        </Design.DataContext>
+        
+        <Grid RowDefinitions="60, 70*, 30*, 60" Background="{DynamicResource PrimaryBackground}" Margin="0">
+                <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="20"
+                            VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
+                        <Border Classes="timer-mode" Classes.mode-active="{Binding WorkActive}">
+                                <TextBlock Text="Work"></TextBlock>
+                        </Border>
+                        <Border Classes="timer-mode" Classes.mode-active="{Binding ShortBreakActive}">
+                                <TextBlock Text="Short Break"></TextBlock>
+                        </Border>
+                        <Border Classes="timer-mode" Classes.mode-active="{Binding LongBreakActive}">
+                                <TextBlock Text="Long Break"></TextBlock>
+                        </Border>
+                </StackPanel>
+                <Panel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                       <Border Background="{DynamicResource PrimaryFill}" Classes.timer-active="{Binding TimerActive}"
+                               Height="125" Width="275" CornerRadius="20">
+                               <TextBlock Classes="timer-count-display" Text="{Binding TimerDisplay}" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250"></TextBlock>
+                       </Border>
+                </Panel>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="20"
+                            VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
+                        <Button Height="40" Width="40" Padding="0" Click="StopButton_OnClick" Classes="icon-button"><Svg Path="/Icons/stop-fill-white.svg"/></Button>
+                        <Button Height="40" Width="100" Content="{Binding ToggleButtonText}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CornerRadius="10" Click="ToggleButton_OnClick"></Button>
+                        <Button Height="40" Width="40" Padding="0" Click="SkipButton_OnClick" Classes="icon-button"><Svg Path="/Icons/skip-forward-fill-white.svg"/></Button>
+                </StackPanel>
+                <Grid Grid.Row="3" ColumnDefinitions="40, *, 40">
+                        <TextBlock Grid.Column="1" TextAlignment="Center" VerticalAlignment="Center" Text="{Binding PomodoroDisplay}"></TextBlock>
+                </Grid>
+        </Grid>
+</UserControl>

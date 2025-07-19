@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+        <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="11.3.2" />
+        <PackageReference Include="Avalonia.Desktop" Version="11.3.2" />
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.2" />
+        <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.2" />
+        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+        <PackageReference Include="Avalonia.Diagnostics" Version="11.3.2">
+            <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
+            <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+        <PackageReference Include="Svg.Controls.Skia.Avalonia" Version="11.3.0.1" />
+        <PackageReference Include="Svg.Skia" Version="3.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Fonts\" />
+      <Folder Include="Icons\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Fonts\Rubik-VariableFont_wght.ttf" />
+      <AvaloniaResource Include="Fonts\Rubik-VariableFont_wght.ttf" />
+      <None Remove="Icons\gear-six-fill.svg" />
+      <AvaloniaResource Include="Icons\gear-six-fill.svg" />
+      <None Remove="Icons\skip-forward-fill.svg" />
+      <AvaloniaResource Include="Icons\skip-forward-fill.svg" />
+      <None Remove="Icons\stop-fill.svg" />
+      <AvaloniaResource Include="Icons\stop-fill.svg" />
+      <None Remove="Icons\timer-fill.png" />
+      <AvaloniaResource Include="Icons\timer-fill.png" />
+      <None Remove="Icons\gear-six-fill-white.svg" />
+      <AvaloniaResource Include="Icons\gear-six-fill-white.svg" />
+      <None Remove="Icons\skip-forward-fill-white.svg" />
+      <AvaloniaResource Include="Icons\skip-forward-fill-white.svg" />
+      <None Remove="Icons\stop-fill-white.svg" />
+      <AvaloniaResource Include="Icons\stop-fill-white.svg" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="MainView.axaml.cs">
+        <DependentUpon>MainView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
+</Project>

@@ -1,0 +1,21 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:PomodoroTimer.ViewModels"
+        x:Class="PomodoroTimer.MainView"
+        x:DataType="vm:MainViewModel"
+        Title="Pomodoro Timer"
+        Icon="/Icons/timer-fill.png"
+        Height="500"
+        Width="400"
+        CanResize="False">
+        
+        <Design.DataContext>
+                <vm:MainViewModel></vm:MainViewModel>
+        </Design.DataContext>
+        
+        <Grid RowDefinitions="*, 25" Background="{DynamicResource PrimaryBackground}">
+                <ContentControl Content="{Binding CurrentView}"/>
+                <Button Grid.Row="1" Classes="icon-button" HorizontalAlignment="Right" Width="30" Height="30" Padding="3" Margin="0, 0, 10, 10" Click="SettingsButton_OnClick"><Svg Margin="0" Path="/Icons/gear-six-fill-white.svg"/></Button>
+        </Grid>
+        
+</Window>
