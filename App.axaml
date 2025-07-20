@@ -57,6 +57,7 @@
         
         <Style Selector="Button:pointerover /template/ ContentPresenter">
             <Setter Property="Background" Value="#777777"></Setter>
+            <Setter Property="Foreground" Value="white"></Setter>
         </Style>
         
         <Style Selector="Button.icon-button">
@@ -64,7 +65,7 @@
         </Style>
         
         <Style Selector="Button.icon-button:pointerover /template/ ContentPresenter">
-            <Setter Property="Background" Value="{DynamicResource PrimaryFill}"></Setter>
+            <Setter Property="Background" Value="#333333"></Setter>
         </Style>
         
         <Style Selector="NumericUpDown">
@@ -78,8 +79,8 @@
     <Application.Resources>
         <FontFamily x:Key="Rubik">/Fonts/Rubik-VariableFont_wght.ttf#Rubik Light</FontFamily>
         <SolidColorBrush x:Key="PrimaryBackground">#282828</SolidColorBrush>
-        <SolidColorBrush x:Key="PrimaryFill">#555555</SolidColorBrush>
+        <SolidColorBrush x:Key="PrimaryFill">#666666</SolidColorBrush>
         <SolidColorBrush x:Key="PrimarySettingsFill">#333333</SolidColorBrush>
-        <SolidColorBrush x:Key="PrimaryBorder">#444444</SolidColorBrush>
+        <SolidColorBrush x:Key="PrimaryBorder">#777777</SolidColorBrush>
     </Application.Resources>
 </Application>

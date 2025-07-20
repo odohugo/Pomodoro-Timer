@@ -45,6 +45,14 @@
       <AvaloniaResource Include="Icons\skip-forward-fill-white.svg" />
       <None Remove="Icons\stop-fill-white.svg" />
       <AvaloniaResource Include="Icons\stop-fill-white.svg" />
+      <None Remove="Icons\timer-fill-gray.svg" />
+      <AvaloniaResource Include="Icons\timer-fill-gray.svg" />
+      <None Remove="Icons\stop-fill-gray.svg" />
+      <AvaloniaResource Include="Icons\stop-fill-gray.svg" />
+      <None Remove="Icons\skip-forward-fill-gray.svg" />
+      <AvaloniaResource Include="Icons\skip-forward-fill-gray.svg" />
+      <None Remove="Icons\gear-six-fill-gray.svg" />
+      <AvaloniaResource Include="Icons\gear-six-fill-gray.svg" />
     </ItemGroup>
 
     <ItemGroup>

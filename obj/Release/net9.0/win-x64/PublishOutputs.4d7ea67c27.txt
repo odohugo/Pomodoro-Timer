@@ -1,0 +1,5 @@
+D:\Documentos HDD\Personal work\code\CSharp\Avalonia\FirstProj\PomodoroTimer\bin\Release\net9.0\win-x64\publish\PomodoroTimer.pdb
+D:\Documentos HDD\Personal work\code\CSharp\Avalonia\FirstProj\PomodoroTimer\bin\Release\net9.0\win-x64\publish\av_libglesv2.dll
+D:\Documentos HDD\Personal work\code\CSharp\Avalonia\FirstProj\PomodoroTimer\bin\Release\net9.0\win-x64\publish\libHarfBuzzSharp.dll
+D:\Documentos HDD\Personal work\code\CSharp\Avalonia\FirstProj\PomodoroTimer\bin\Release\net9.0\win-x64\publish\libSkiaSharp.dll
+D:\Documentos HDD\Personal work\code\CSharp\Avalonia\FirstProj\PomodoroTimer\bin\Release\net9.0\win-x64\publish\PomodoroTimer.exe

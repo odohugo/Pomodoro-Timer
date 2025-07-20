@@ -12,7 +12,6 @@ public partial class SettingsView : UserControl
     public SettingsView()
     {
         InitializeComponent();
-        this.DataContext = new SettingsViewModel(new SettingsService());
     }
 
     private void SaveSettingsButton_OnClick(object? sender, RoutedEventArgs e)
@@ -20,4 +19,8 @@ public partial class SettingsView : UserControl
         (DataContext as SettingsViewModel)?.SaveCommand.Execute(null);
     }
 
+    private void ResetSettingsButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        (DataContext as SettingsViewModel)?.ResetSettingsCommand.Execute(null);
+    }
 }

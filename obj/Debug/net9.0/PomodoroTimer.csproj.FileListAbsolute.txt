@@ -79,3 +79,4 @@ D:\Documentos HDD\Personal work\code\CSharp\Avalonia\FirstProj\PomodoroTimer\obj
 D:\Documentos HDD\Personal work\code\CSharp\Avalonia\FirstProj\PomodoroTimer\obj\Debug\net9.0\PomodoroTimer.pdb
 D:\Documentos HDD\Personal work\code\CSharp\Avalonia\FirstProj\PomodoroTimer\obj\Debug\net9.0\PomodoroTimer.genruntimeconfig.cache
 D:\Documentos HDD\Personal work\code\CSharp\Avalonia\FirstProj\PomodoroTimer\obj\Debug\net9.0\ref\PomodoroTimer.dll
+D:\Documentos HDD\Personal work\code\CSharp\Avalonia\FirstProj\PomodoroTimer\obj\Debug\net9.0\PomodoroTimer.sourcelink.json

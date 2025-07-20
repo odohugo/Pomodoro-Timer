@@ -8,6 +8,7 @@ namespace PomodoroTimer.ViewModels;
 
 public partial class SettingsViewModel() : ViewModelBase
 {
+    private MainViewModel _mainViewModel;
     private readonly SettingsService _settingsService;
     [ObservableProperty] private int _workDurationSetting;
     [ObservableProperty] private int _shortBreakDurationSetting;
@@ -15,14 +16,20 @@ public partial class SettingsViewModel() : ViewModelBase
     [ObservableProperty] private int _pomodoroAmountSetting;
     [ObservableProperty] private bool _autoStartTimerSetting;
     
-    public SettingsViewModel(SettingsService settingsService) : this()
+    public SettingsViewModel(SettingsService settingsService, MainViewModel mainViewModel) : this()
     {
+        _mainViewModel  = mainViewModel;
         _settingsService = settingsService;
-        WorkDurationSetting = settingsService.AppSettings.WorkDuration;
-        ShortBreakDurationSetting = settingsService.AppSettings.ShortBreakDuration;
-        LongBreakDurationSetting = settingsService.AppSettings.LongBreakDuration;
-        PomodoroAmountSetting = settingsService.AppSettings.PomodorosUntilLongBreak;
-        AutoStartTimerSetting = settingsService.AppSettings.AutomaticallyStartNextTimer;
+        LoadSettings();
+    }
+
+    public void LoadSettings()
+    {
+        WorkDurationSetting = _settingsService.AppSettings.WorkDuration;
+        ShortBreakDurationSetting = _settingsService.AppSettings.ShortBreakDuration;
+        LongBreakDurationSetting = _settingsService.AppSettings.LongBreakDuration;
+        PomodoroAmountSetting = _settingsService.AppSettings.PomodorosUntilLongBreak;
+        AutoStartTimerSetting = _settingsService.AppSettings.AutomaticallyStartNextTimer;
     }
 
 
@@ -35,5 +42,19 @@ public partial class SettingsViewModel() : ViewModelBase
         _settingsService.AppSettings.PomodorosUntilLongBreak = PomodoroAmountSetting;
         _settingsService.AppSettings.AutomaticallyStartNextTimer = AutoStartTimerSetting;
         _settingsService.Save();
+        _mainViewModel.ToggleView();
     }
+
+    [RelayCommand]
+    private void ResetSettings()
+    {
+        _settingsService.AppSettings.WorkDuration = 25;
+        _settingsService.AppSettings.ShortBreakDuration = 5;
+        _settingsService.AppSettings.LongBreakDuration = 15;
+        _settingsService.AppSettings.PomodorosUntilLongBreak = 4;
+        _settingsService.AppSettings.AutomaticallyStartNextTimer = false;
+        _settingsService.Save();
+        _mainViewModel.ToggleView();
+    }
+    
 }

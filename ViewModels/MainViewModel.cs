@@ -9,11 +9,14 @@ public partial class MainViewModel : ViewModelBase
 {
     [ObservableProperty] private ViewModelBase _currentView;
     
-    private readonly TimerViewModel _timerViewModel = new TimerViewModel(new SettingsService());
-    private readonly SettingsViewModel _settingsViewModel = new SettingsViewModel(new SettingsService());
+    private readonly SettingsService _settingsService = new SettingsService();
+    private readonly TimerViewModel _timerViewModel;
+    private readonly SettingsViewModel _settingsViewModel;
 
     public MainViewModel()
     {
+        _settingsViewModel = new SettingsViewModel(_settingsService, this);
+        _timerViewModel = new TimerViewModel(_settingsService);
         CurrentView = _timerViewModel;
     }
 
@@ -22,6 +25,7 @@ public partial class MainViewModel : ViewModelBase
     {
         if (CurrentView is TimerViewModel)
         {
+            _settingsViewModel.LoadSettings();
             CurrentView = _settingsViewModel;
         }
         else

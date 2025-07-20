@@ -7,7 +7,7 @@
         <entry key="MainView.axaml" value="PomodoroTimer.csproj" />
         <entry key="MainWindow.axaml" value="AvaloniaApplication1.csproj" />
         <entry key="Views/MainView.axaml" value="AvaloniaApplication1.csproj" />
-        <entry key="Views/SettingsView.axaml" value="AvaloniaApplication1.csproj" />
+        <entry key="Views/SettingsView.axaml" value="PomodoroTimer.csproj" />
         <entry key="Views/TimerView.axaml" value="PomodoroTimer.csproj" />
       </map>
     </option>

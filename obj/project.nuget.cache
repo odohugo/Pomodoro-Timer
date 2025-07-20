@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zk0N/nZ/0Eg=",
+  "dgSpecHash": "tEt22pU8Sjs=",
   "success": true,
   "projectFilePath": "D:\\Documentos HDD\\Personal work\\code\\CSharp\\Avalonia\\FirstProj\\PomodoroTimer\\PomodoroTimer.csproj",
   "expectedPackageFiles": [
@@ -27,6 +27,7 @@
     "C:\\Users\\Hugo\\.nuget\\packages\\harfbuzzsharp.nativeassets.webassembly\\8.3.1.1\\harfbuzzsharp.nativeassets.webassembly.8.3.1.1.nupkg.sha512",
     "C:\\Users\\Hugo\\.nuget\\packages\\harfbuzzsharp.nativeassets.win32\\8.3.1.1\\harfbuzzsharp.nativeassets.win32.8.3.1.1.nupkg.sha512",
     "C:\\Users\\Hugo\\.nuget\\packages\\microcom.runtime\\0.11.0\\microcom.runtime.0.11.0.nupkg.sha512",
+    "C:\\Users\\Hugo\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.7\\microsoft.net.illink.tasks.9.0.7.nupkg.sha512",
     "C:\\Users\\Hugo\\.nuget\\packages\\shimskiasharp\\3.0.3\\shimskiasharp.3.0.3.nupkg.sha512",
     "C:\\Users\\Hugo\\.nuget\\packages\\skiasharp\\3.116.1\\skiasharp.3.116.1.nupkg.sha512",
     "C:\\Users\\Hugo\\.nuget\\packages\\skiasharp.harfbuzz\\3.116.1\\skiasharp.harfbuzz.3.116.1.nupkg.sha512",
@@ -39,7 +40,10 @@
     "C:\\Users\\Hugo\\.nuget\\packages\\svg.model\\3.0.3\\svg.model.3.0.3.nupkg.sha512",
     "C:\\Users\\Hugo\\.nuget\\packages\\svg.skia\\3.0.3\\svg.skia.3.0.3.nupkg.sha512",
     "C:\\Users\\Hugo\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
-    "C:\\Users\\Hugo\\.nuget\\packages\\tmds.dbus.protocol\\0.21.2\\tmds.dbus.protocol.0.21.2.nupkg.sha512"
+    "C:\\Users\\Hugo\\.nuget\\packages\\tmds.dbus.protocol\\0.21.2\\tmds.dbus.protocol.0.21.2.nupkg.sha512",
+    "C:\\Users\\Hugo\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\9.0.7\\microsoft.netcore.app.runtime.win-x64.9.0.7.nupkg.sha512",
+    "C:\\Users\\Hugo\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\9.0.7\\microsoft.windowsdesktop.app.runtime.win-x64.9.0.7.nupkg.sha512",
+    "C:\\Users\\Hugo\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\9.0.7\\microsoft.aspnetcore.app.runtime.win-x64.9.0.7.nupkg.sha512"
   ],
   "logs": []
 }

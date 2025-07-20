@@ -13,7 +13,7 @@
         
         <Grid RowDefinitions="60, 70*, 30*, 60" Background="{DynamicResource PrimaryBackground}" Margin="0">
                 <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="20"
-                            VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
+                            VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="5">
                         <Border Classes="timer-mode" Classes.mode-active="{Binding WorkActive}">
                                 <TextBlock Text="Work"></TextBlock>
                         </Border>
@@ -31,10 +31,10 @@
                        </Border>
                 </Panel>
                 <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="20"
-                            VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
-                        <Button Height="40" Width="40" Padding="0" Click="StopButton_OnClick" Classes="icon-button"><Svg Path="/Icons/stop-fill-white.svg"/></Button>
+                            VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="20">
+                        <Button Height="40" Width="40" Padding="0" Click="StopButton_OnClick" Classes="icon-button"><Svg Path="/Icons/stop-fill-gray.svg"/></Button>
                         <Button Height="40" Width="100" Content="{Binding ToggleButtonText}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CornerRadius="10" Click="ToggleButton_OnClick"></Button>
-                        <Button Height="40" Width="40" Padding="0" Click="SkipButton_OnClick" Classes="icon-button"><Svg Path="/Icons/skip-forward-fill-white.svg"/></Button>
+                        <Button Height="40" Width="40" Padding="0" Click="SkipButton_OnClick" Classes="icon-button"><Svg Path="/Icons/skip-forward-fill-gray.svg"/></Button>
                 </StackPanel>
                 <Grid Grid.Row="3" ColumnDefinitions="40, *, 40">
                         <TextBlock Grid.Column="1" TextAlignment="Center" VerticalAlignment="Center" Text="{Binding PomodoroDisplay}"></TextBlock>
