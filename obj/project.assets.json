@@ -681,6 +681,25 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "System.Windows.Extensions/10.0.0-preview.6.25358.103": {
+        "type": "package",
+        "compile": {
+          "lib/net9.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net9.0/System.Windows.Extensions.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "Tmds.DBus.Protocol/0.21.2": {
         "type": "package",
         "dependencies": {
@@ -1257,6 +1276,19 @@
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Windows.Extensions/10.0.0-preview.6.25358.103": {
+        "type": "package",
+        "compile": {
+          "lib/net9.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "runtimes/win/lib/net9.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Tmds.DBus.Protocol/0.21.2": {
@@ -2268,6 +2300,33 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Windows.Extensions/10.0.0-preview.6.25358.103": {
+      "sha512": "svRMDZyTZfRHLl8P24G4WpP2Hc42cTQO/LqyOv2m5bNXAOOD5woej4AsSRKAIMnQrK9RazT14aLp4eAeFfFAbg==",
+      "type": "package",
+      "path": "system.windows.extensions/10.0.0-preview.6.25358.103",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net10.0/System.Windows.Extensions.dll",
+        "lib/net10.0/System.Windows.Extensions.xml",
+        "lib/net8.0/System.Windows.Extensions.dll",
+        "lib/net8.0/System.Windows.Extensions.xml",
+        "lib/net9.0/System.Windows.Extensions.dll",
+        "lib/net9.0/System.Windows.Extensions.xml",
+        "runtimes/win/lib/net10.0/System.Windows.Extensions.dll",
+        "runtimes/win/lib/net10.0/System.Windows.Extensions.xml",
+        "runtimes/win/lib/net8.0/System.Windows.Extensions.dll",
+        "runtimes/win/lib/net8.0/System.Windows.Extensions.xml",
+        "runtimes/win/lib/net9.0/System.Windows.Extensions.dll",
+        "runtimes/win/lib/net9.0/System.Windows.Extensions.xml",
+        "system.windows.extensions.10.0.0-preview.6.25358.103.nupkg.sha512",
+        "system.windows.extensions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "Tmds.DBus.Protocol/0.21.2": {
       "sha512": "ScSMrUrrw8px4kK1Glh0fZv/HQUlg1078bNXNPfRPKQ3WbRzV9HpsydYEOgSoMK5LWICMf2bMwIFH0pGjxjcMA==",
       "type": "package",
@@ -2294,7 +2353,8 @@
       "CommunityToolkit.Mvvm >= 8.4.0",
       "Microsoft.NET.ILLink.Tasks >= 9.0.7",
       "Svg.Controls.Skia.Avalonia >= 11.3.0.1",
-      "Svg.Skia >= 3.0.3"
+      "Svg.Skia >= 3.0.3",
+      "System.Windows.Extensions >= 10.0.0-preview.6.25358.103"
     ]
   },
   "packageFolders": {
@@ -2379,6 +2439,10 @@
           "Svg.Skia": {
             "target": "Package",
             "version": "[3.0.3, )"
+          },
+          "System.Windows.Extensions": {
+            "target": "Package",
+            "version": "[10.0.0-preview.6.25358.103, )"
           }
         },
         "imports": [

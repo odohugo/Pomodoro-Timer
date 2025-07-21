@@ -38,7 +38,7 @@
                     <Label Content="Start next timer automatically" VerticalContentAlignment="Center"></Label>
                     <CheckBox IsChecked="{Binding AutoStartTimerSetting, Mode=TwoWay}"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
                     <Button Content="Reset to default" Click="ResetSettingsButton_OnClick"></Button>
                     <Button Content="Save Settings" Click="SaveSettingsButton_OnClick"></Button>
                 </StackPanel>

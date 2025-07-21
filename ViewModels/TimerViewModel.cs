@@ -1,4 +1,8 @@
-﻿using System.Timers;
+﻿using System.IO.Enumeration;
+using System.Net.Mime;
+using System.Runtime.InteropServices.Swift;
+using System.Timers;
+using Avalonia.Controls.ApplicationLifetimes;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PomodoroTimer.Services;
@@ -55,6 +59,7 @@ public partial class TimerViewModel : ViewModelBase
    public bool ShortBreakActive => CurrentMode == Mode.ShortBreak;
    public bool LongBreakActive => CurrentMode == Mode.LongBreak;
 
+   private readonly System.Media.SoundPlayer _player = new System.Media.SoundPlayer(@"notification_sound.wav");
    public TimerViewModel(SettingsService settingsService)
    {
      _settingsService =  settingsService;
@@ -78,6 +83,7 @@ public partial class TimerViewModel : ViewModelBase
          if (TimerMinutes <= 0)
          {
             HandleModeSwitch();
+            HandleAlert();
             return;
          }
          TimerSeconds = 59;
@@ -136,6 +142,12 @@ public partial class TimerViewModel : ViewModelBase
       }
       TimerSeconds = 0;
       if (_settingsService.AppSettings.AutomaticallyStartNextTimer) ToggleTimer();
+   }
+
+   private void HandleAlert()
+   {
+      App.WindowActivator.BringToFront();
+      _player?.Play();
    }
 
    [RelayCommand]

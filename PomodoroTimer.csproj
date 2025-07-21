@@ -21,6 +21,7 @@
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
         <PackageReference Include="Svg.Controls.Skia.Avalonia" Version="11.3.0.1" />
         <PackageReference Include="Svg.Skia" Version="3.0.3" />
+        <PackageReference Include="System.Windows.Extensions" Version="10.0.0-preview.6.25358.103" />
     </ItemGroup>
 
     <ItemGroup>
@@ -60,5 +61,13 @@
         <DependentUpon>MainView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Sounds\notification_sound.wav" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Include="notification_sound.wav" />
     </ItemGroup>
 </Project>

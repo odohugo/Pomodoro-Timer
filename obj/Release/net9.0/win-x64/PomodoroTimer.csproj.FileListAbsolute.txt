@@ -237,3 +237,4 @@ D:\Documentos HDD\Personal work\code\CSharp\Avalonia\FirstProj\PomodoroTimer\bin
 D:\Documentos HDD\Personal work\code\CSharp\Avalonia\FirstProj\PomodoroTimer\bin\Release\net9.0\win-x64\mscordbi.dll
 D:\Documentos HDD\Personal work\code\CSharp\Avalonia\FirstProj\PomodoroTimer\bin\Release\net9.0\win-x64\mscorrc.dll
 D:\Documentos HDD\Personal work\code\CSharp\Avalonia\FirstProj\PomodoroTimer\bin\Release\net9.0\win-x64\msquic.dll
+D:\Documentos HDD\Personal work\code\CSharp\Avalonia\FirstProj\PomodoroTimer\bin\Release\net9.0\win-x64\System.Windows.Extensions.dll

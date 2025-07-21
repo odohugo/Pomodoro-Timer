@@ -1,4 +1,5 @@
 ﻿using System.Timers;
+using Avalonia.Controls;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PomodoroTimer.Services;
@@ -12,14 +13,14 @@ public partial class MainViewModel : ViewModelBase
     private readonly SettingsService _settingsService = new SettingsService();
     private readonly TimerViewModel _timerViewModel;
     private readonly SettingsViewModel _settingsViewModel;
-
+    
     public MainViewModel()
     {
         _settingsViewModel = new SettingsViewModel(_settingsService, this);
         _timerViewModel = new TimerViewModel(_settingsService);
         CurrentView = _timerViewModel;
     }
-
+    
     [RelayCommand]
     public void ToggleView()
     {
@@ -30,6 +31,7 @@ public partial class MainViewModel : ViewModelBase
         }
         else
         {
+            _timerViewModel.ResetTimerCommand.Execute(null);
             CurrentView = _timerViewModel;
         }
     }
