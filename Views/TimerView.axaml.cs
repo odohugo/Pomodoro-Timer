@@ -13,10 +13,6 @@ public partial class TimerView : UserControl
     {
         InitializeComponent();
         this.DataContext = new TimerViewModel(new SettingsService());
-        Avalonia.Threading.Dispatcher.UIThread.Post(() =>
-        {
-            (DataContext as TimerViewModel)?.InitializeTimerCommand.Execute(null);
-        });
     }
     
     private void ToggleButton_OnClick(object? sender, RoutedEventArgs e)

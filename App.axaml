@@ -14,8 +14,13 @@
         <FluentTheme />
         <Style Selector="Window">
             <Setter Property="Foreground" Value="White" />
-            <Setter Property="FontFamily" Value="{DynamicResource Rubik}" />
+            <Setter Property="FontFamily" Value="{DynamicResource RubikLight}" />
             <Setter Property="FontSize" Value="14"></Setter>
+        </Style>
+        
+        <Style Selector="Label.title">
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="FontFamily" Value="Rubik"></Setter>
         </Style>
         
         <Style Selector="Border.timer-mode">
@@ -46,6 +51,12 @@
             <Setter Property="BorderBrush" Value="#999999"></Setter>
         </Style>
         
+        <Style Selector="Border.calendar-cell">
+            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryFill}"></Setter>
+            <Setter Property="BorderThickness" Value="2"></Setter>
+            <Setter Property="CornerRadius" Value="5"></Setter>
+        </Style>
+        
         <Style Selector="TextBlock.timer-count-display">
             <Setter Property="FontSize" Value="70"></Setter>
         </Style>
@@ -69,15 +80,51 @@
         </Style>
         
         <Style Selector="NumericUpDown">
+            <Setter Property="Height" Value="15"></Setter>
+            <Setter Property="Width" Value="50"></Setter>
             <Setter Property="Margin" Value="0"></Setter>
             <Setter Property="Padding" Value="5, 2"></Setter>
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="Background" Value="{DynamicResource PrimaryFill}"></Setter>
+            <Setter Property="Foreground" Value="white"></Setter>
+            <Setter Property="CornerRadius" Value="0"></Setter>
+            <Setter Property="FontFamily" Value="{DynamicResource Rubik}"></Setter>
+            <Setter Property="ShowButtonSpinner" Value="False"></Setter>
+        </Style>
+        
+        <Style Selector="CheckBox /template/ Border#PART_Border">
+            <Setter Property="Background" Value="white"></Setter>
+            <Setter Property="BorderBrush" Value="white"></Setter>
+            <Setter Property="BorderThickness" Value="4"></Setter>
+        </Style>
+        
+        <Style Selector="Border.CalendarBorder">
+            <Setter Property="BorderThickness" Value="2"></Setter>
+            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBorder}"></Setter>
+            <Setter Property="Background" Value="{DynamicResource PrimaryFill}"></Setter>
+            <Setter Property="CornerRadius" Value="4"></Setter>
+            <Setter Property="Margin" Value="2"></Setter>
+        </Style>
+        <Style Selector="TextBlock.CalendarButtonDateText">
+            <Setter Property="FontFamily" Value="{DynamicResource RubikLight}"></Setter>
+            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="Foreground" Value="#EEEEEE"></Setter>
+            <Setter Property="Margin" Value="2"></Setter>
+        </Style>
+        <Style Selector="TextBlock.CalendarButtonPomodoroText">
+            <Setter Property="FontFamily" Value="{DynamicResource Rubik}"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Margin" Value="2"></Setter>
         </Style>
         
         </Application.Styles>
              
     <Application.Resources>
-        <FontFamily x:Key="Rubik">/Fonts/Rubik-VariableFont_wght.ttf#Rubik Light</FontFamily>
+        <FontFamily x:Key="RubikLight">/Fonts/Rubik-Light.ttf#Rubik Light</FontFamily>
+        <FontFamily x:Key="Rubik">/Fonts/Rubik-Regular.ttf#Rubik</FontFamily>
+        <FontFamily x:Key="RubikBlack">/Fonts/Rubik-Black.ttf#Rubik Black</FontFamily>
         <SolidColorBrush x:Key="PrimaryBackground">#282828</SolidColorBrush>
         <SolidColorBrush x:Key="PrimaryFill">#666666</SolidColorBrush>
         <SolidColorBrush x:Key="PrimarySettingsFill">#333333</SolidColorBrush>

@@ -1,4 +1,5 @@
-﻿using System.IO.Enumeration;
+﻿using System;
+using System.IO.Enumeration;
 using System.Net.Mime;
 using System.Runtime.InteropServices.Swift;
 using System.Timers;
@@ -60,10 +61,12 @@ public partial class TimerViewModel : ViewModelBase
    public bool LongBreakActive => CurrentMode == Mode.LongBreak;
 
    private readonly System.Media.SoundPlayer _player = new System.Media.SoundPlayer(@"notification_sound.wav");
+   private CalendarService _calendarService = new  CalendarService();
    public TimerViewModel(SettingsService settingsService)
    {
      _settingsService =  settingsService;
      TimerMinutes = _settingsService.AppSettings.WorkDuration;
+     InitializeTimer();
    }
    
    [RelayCommand]
@@ -82,6 +85,7 @@ public partial class TimerViewModel : ViewModelBase
       {
          if (TimerMinutes <= 0)
          {
+            IncrementPomodoros();
             HandleModeSwitch();
             HandleAlert();
             return;
@@ -109,6 +113,12 @@ public partial class TimerViewModel : ViewModelBase
       SettingsViewActive = !SettingsViewActive;
    }
 
+   private void IncrementPomodoros()
+   {
+      Pomodoros += 1;
+      _calendarService.SaveDay(DateTime.Today, Pomodoros);
+   }
+
    private void HandleModeSwitch()
    {
       _timer?.Stop();
@@ -116,7 +126,7 @@ public partial class TimerViewModel : ViewModelBase
       switch (CurrentMode)
       {
          case Mode.Work:
-            Pomodoros += 1;
+            if (_settingsService.AppSettings.GainPomodorosOnSkip) IncrementPomodoros();
             if (Pomodoros > 0 && Pomodoros % _settingsService.AppSettings.PomodorosUntilLongBreak == 0)
             {
               CurrentMode = Mode.LongBreak; 
@@ -161,6 +171,7 @@ public partial class TimerViewModel : ViewModelBase
    {
       _timer?.Stop();
       TimerActive = false;
+      TimerSeconds = 0;
       switch (CurrentMode)
       {
          case Mode.Work:
@@ -173,6 +184,5 @@ public partial class TimerViewModel : ViewModelBase
             TimerMinutes = _settingsService.AppSettings.LongBreakDuration;
             break;
       }
-      TimerSeconds = 0;
    }
 }

@@ -3,7 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:PomodoroTimer.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="455"
              x:DataType="vm:SettingsViewModel"
              x:Class="PomodoroTimer.Views.SettingsView">
     
@@ -11,39 +11,38 @@
                 <vm:SettingsViewModel></vm:SettingsViewModel>
         </Design.DataContext>
     
-    <Viewbox Height="450">
-        <Border Background="{DynamicResource PrimarySettingsFill}" BorderBrush="{DynamicResource PrimaryBorder}" BorderThickness="2" Margin="10" CornerRadius="10" Padding="45, 30, 45, 30" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <StackPanel Spacing="25">
-                <StackPanel>
-                    <Label Content="Short break duration in minutes"></Label>
-                    <NumericUpDown Value="{Binding ShortBreakDurationSetting, Mode=TwoWay}" Increment="1" ParsingNumberStyle="Integer" Minimum="1"></NumericUpDown>
-                </StackPanel>
+    <ScrollViewer Background="{DynamicResource PrimaryBackground}" Padding="20 10" >
+        <StackPanel>
+            <Label Content="Settings" HorizontalAlignment="Center" Classes="title" Margin="0 0 0 20"></Label>
+            <Grid Height="300" VerticalAlignment="Top" ColumnDefinitions="240, 50" RowDefinitions="*, *, *, *, *, *" Margin="10 0 10 10">
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Short break duration in minutes" TextWrapping="Wrap" VerticalAlignment="Center"></TextBlock>
+                <NumericUpDown Grid.Row="0" Grid.Column="1"  Value="{Binding ShortBreakDurationSetting, Mode=TwoWay}" Increment="1" ParsingNumberStyle="Integer" Minimum="1"></NumericUpDown>
                 
-                <StackPanel>
-                <Label Content="Long break duration in minutes"></Label>
-                <NumericUpDown Value="{Binding LongBreakDurationSetting, Mode=TwoWay}" Increment="1" ParsingNumberStyle="Integer" Minimum="1"></NumericUpDown>
-                </StackPanel>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Long break duration in minutes" TextWrapping="Wrap" VerticalAlignment="Center"></TextBlock>
+                <NumericUpDown Grid.Row="1" Grid.Column="1" Value="{Binding LongBreakDurationSetting, Mode=TwoWay}" Increment="1" ParsingNumberStyle="Integer" Minimum="1"></NumericUpDown>
                 
-                <StackPanel>
-                <Label Content="Work duration in minutes"></Label>
-                <NumericUpDown Value="{Binding WorkDurationSetting, Mode=TwoWay}" Increment="1" ParsingNumberStyle="Integer" Minimum="1"></NumericUpDown>
-                </StackPanel>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Work duration in minutes" TextWrapping="Wrap" VerticalAlignment="Center"></TextBlock>
+                <NumericUpDown Grid.Row="2" Grid.Column="1" Value="{Binding WorkDurationSetting, Mode=TwoWay}" Increment="1" ParsingNumberStyle="Integer" Minimum="1"></NumericUpDown>
                 
-                <StackPanel>
-                <Label Content="How many pomodoros until long break"></Label>
-                <NumericUpDown Value="{Binding PomodoroAmountSetting, Mode=TwoWay}" Increment="1" ParsingNumberStyle="Integer" Minimum="1"></NumericUpDown>
-                </StackPanel>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="How many pomodoros until long break" TextWrapping="Wrap" VerticalAlignment="Center"></TextBlock>
+                <NumericUpDown Grid.Row="3" Grid.Column="1" Value="{Binding PomodoroAmountSetting, Mode=TwoWay}" Increment="1" ParsingNumberStyle="Integer" Minimum="1"></NumericUpDown>
                 
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="5">
-                    <Label Content="Start next timer automatically" VerticalContentAlignment="Center"></Label>
-                    <CheckBox IsChecked="{Binding AutoStartTimerSetting, Mode=TwoWay}"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
-                    <Button Content="Reset to default" Click="ResetSettingsButton_OnClick"></Button>
-                    <Button Content="Save Settings" Click="SaveSettingsButton_OnClick"></Button>
-                </StackPanel>
+                <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Grid.ColumnDefinitions="*, 50">
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Start next timer automatically" TextWrapping="Wrap" VerticalAlignment="Center"></TextBlock>
+                    <CheckBox Grid.Row="0" Grid.Column="1" IsChecked="{Binding AutoStartTimerSetting, Mode=TwoWay}"/>
+                </Grid>
+                
+                <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Grid.ColumnDefinitions="*, 50">
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Gain pomodoros on skip" TextWrapping="Wrap" VerticalAlignment="Center"></TextBlock>
+                    <CheckBox Grid.Row="0" Grid.Column="1" IsChecked="{Binding GainPomodorosOnSkipSetting, Mode=TwoWay}"/>
+                </Grid>
+            </Grid>
+            
+            <StackPanel Height="40" Spacing="40" VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button Content="Reset to default" Click="ResetSettingsButton_OnClick"></Button>
+                <Button Content="Save Settings" Click="SaveSettingsButton_OnClick"></Button>
             </StackPanel>
-        </Border>
-    </Viewbox>
+        </StackPanel >
+    </ScrollViewer>
     
 </UserControl>

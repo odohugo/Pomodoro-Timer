@@ -8,4 +8,5 @@ public class AppSettings
     public int LongBreakDuration { get; set; } = 15;
     public int PomodorosUntilLongBreak { get; set; } = 4;
     public bool AutomaticallyStartNextTimer { get; set; } = false;
+    public bool GainPomodorosOnSkip { get; set; } = false;
 }

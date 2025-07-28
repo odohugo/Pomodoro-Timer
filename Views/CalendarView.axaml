@@ -1,0 +1,23 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:PomodoroTimer.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="500"
+             x:DataType="vm:CalendarViewModel"
+             x:Class="PomodoroTimer.Views.CalendarView">
+    
+    <Design.DataContext>
+        <vm:CalendarViewModel></vm:CalendarViewModel>
+    </Design.DataContext>
+    
+    <ScrollViewer Background="{DynamicResource PrimaryBackground}">
+        <StackPanel>
+            <Label HorizontalAlignment="Center" Margin="20" FontSize="20">Pomodoro History</Label>
+            <Grid x:Name="CalendarGrid" ColumnDefinitions="45, 45, 45, 45, 45, 45, 45" RowDefinitions="55, 55, 55, 55, 55, 55, 55"
+                  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+    
+</UserControl>

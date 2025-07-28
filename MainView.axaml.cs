@@ -15,6 +15,11 @@ public partial class MainView : Window
 
     private void SettingsButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        (DataContext as MainViewModel)?.ToggleViewCommand.Execute(null);
+        (DataContext as MainViewModel)?.ToggleSettingsViewCommand.Execute(null);
+    }
+
+    private void CalendarButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        (DataContext as MainViewModel)?.ToggleCalendarViewCommand.Execute(null);
     }
 }
