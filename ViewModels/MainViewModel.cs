@@ -13,26 +13,41 @@ public partial class MainViewModel : ViewModelBase
     private readonly SettingsService _settingsService = new SettingsService();
     private readonly TimerViewModel _timerViewModel;
     private readonly SettingsViewModel _settingsViewModel;
+    private readonly CalendarViewModel _calendarViewModel;
     
     public MainViewModel()
     {
         _settingsViewModel = new SettingsViewModel(_settingsService, this);
         _timerViewModel = new TimerViewModel(_settingsService);
+        _calendarViewModel = new CalendarViewModel();
         CurrentView = _timerViewModel;
     }
     
     [RelayCommand]
-    public void ToggleView()
+    public void ToggleSettingsView()
     {
-        if (CurrentView is TimerViewModel)
+        if (CurrentView is SettingsViewModel)
+        {
+            CurrentView = _timerViewModel;
+        }
+        else
         {
             _settingsViewModel.LoadSettings();
             CurrentView = _settingsViewModel;
         }
-        else
+    }
+    
+    [RelayCommand]
+    public void ToggleCalendarView()
+    {
+        if (CurrentView is CalendarViewModel)
         {
-            _timerViewModel.ResetTimerCommand.Execute(null);
             CurrentView = _timerViewModel;
         }
+        else
+        {
+            CurrentView = _calendarViewModel;
+        }
     }
+    
 }

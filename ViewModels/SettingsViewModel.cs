@@ -9,12 +9,14 @@ namespace PomodoroTimer.ViewModels;
 public partial class SettingsViewModel() : ViewModelBase
 {
     private MainViewModel _mainViewModel;
+    private TimerViewModel _timerViewModel;
     private readonly SettingsService _settingsService;
     [ObservableProperty] private int _workDurationSetting;
     [ObservableProperty] private int _shortBreakDurationSetting;
     [ObservableProperty] private int _longBreakDurationSetting;
     [ObservableProperty] private int _pomodoroAmountSetting;
     [ObservableProperty] private bool _autoStartTimerSetting;
+    [ObservableProperty] private bool _gainPomodorosOnSkipSetting;
     
     public SettingsViewModel(SettingsService settingsService, MainViewModel mainViewModel) : this()
     {
@@ -30,6 +32,7 @@ public partial class SettingsViewModel() : ViewModelBase
         LongBreakDurationSetting = _settingsService.AppSettings.LongBreakDuration;
         PomodoroAmountSetting = _settingsService.AppSettings.PomodorosUntilLongBreak;
         AutoStartTimerSetting = _settingsService.AppSettings.AutomaticallyStartNextTimer;
+        GainPomodorosOnSkipSetting = _settingsService.AppSettings.GainPomodorosOnSkip;
     }
 
 
@@ -41,8 +44,9 @@ public partial class SettingsViewModel() : ViewModelBase
         _settingsService.AppSettings.LongBreakDuration = LongBreakDurationSetting;
         _settingsService.AppSettings.PomodorosUntilLongBreak = PomodoroAmountSetting;
         _settingsService.AppSettings.AutomaticallyStartNextTimer = AutoStartTimerSetting;
+        _settingsService.AppSettings.GainPomodorosOnSkip = GainPomodorosOnSkipSetting;
         _settingsService.Save();
-        _mainViewModel.ToggleView();
+        _mainViewModel.ToggleSettingsView();
     }
 
     [RelayCommand]
@@ -53,8 +57,9 @@ public partial class SettingsViewModel() : ViewModelBase
         _settingsService.AppSettings.LongBreakDuration = 15;
         _settingsService.AppSettings.PomodorosUntilLongBreak = 4;
         _settingsService.AppSettings.AutomaticallyStartNextTimer = false;
+        _settingsService.AppSettings.GainPomodorosOnSkip = false;
         _settingsService.Save();
-        _mainViewModel.ToggleView();
+        _mainViewModel.ToggleSettingsView();
     }
     
 }

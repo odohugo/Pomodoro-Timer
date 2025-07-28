@@ -25,13 +25,13 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Controls\" />
       <Folder Include="Fonts\" />
       <Folder Include="Icons\" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="Fonts\Rubik-VariableFont_wght.ttf" />
-      <AvaloniaResource Include="Fonts\Rubik-VariableFont_wght.ttf" />
       <None Remove="Icons\gear-six-fill.svg" />
       <AvaloniaResource Include="Icons\gear-six-fill.svg" />
       <None Remove="Icons\skip-forward-fill.svg" />
@@ -54,6 +54,14 @@
       <AvaloniaResource Include="Icons\skip-forward-fill-gray.svg" />
       <None Remove="Icons\gear-six-fill-gray.svg" />
       <AvaloniaResource Include="Icons\gear-six-fill-gray.svg" />
+      <None Remove="Fonts\Rubik-Black.ttf" />
+      <AvaloniaResource Include="Fonts\Rubik-Black.ttf" />
+      <None Remove="Fonts\Rubik-Light.ttf" />
+      <AvaloniaResource Include="Fonts\Rubik-Light.ttf" />
+      <None Remove="Fonts\Rubik-Regular.ttf" />
+      <AvaloniaResource Include="Fonts\Rubik-Regular.ttf" />
+      <None Remove="Icons\calendar-check-white.svg" />
+      <AvaloniaResource Include="Icons\calendar-check-white.svg" />
     </ItemGroup>
 
     <ItemGroup>
