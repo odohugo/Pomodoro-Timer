@@ -12,11 +12,12 @@
     </Design.DataContext>
     
     <ScrollViewer Background="{DynamicResource PrimaryBackground}">
-        <StackPanel>
-            <Label HorizontalAlignment="Center" Margin="20" FontSize="20">Pomodoro History</Label>
-            <Grid x:Name="CalendarGrid" ColumnDefinitions="45, 45, 45, 45, 45, 45, 45" RowDefinitions="55, 55, 55, 55, 55, 55, 55"
+        <StackPanel Spacing="50">
+            <Label HorizontalAlignment="Center" Margin="0 20 0 0" FontSize="20">Pomodoro History</Label>
+            <Grid x:Name="CalendarGrid" ColumnDefinitions="45, 45, 45, 45, 45, 45, 45" RowDefinitions="55, 55, 55, 55"
                   HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
             </Grid>
+            <Button Content="Clear History" HorizontalAlignment="Center" Click="ClearHistoryButton_OnClick"></Button>
         </StackPanel>
     </ScrollViewer>
     

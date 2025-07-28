@@ -64,4 +64,9 @@ public class CalendarService
       Save();
    }
    
+   public void ClearHistory()
+   {
+      CalendarGoals.CalendarEntries.Clear();
+      Save();
+   }
 }

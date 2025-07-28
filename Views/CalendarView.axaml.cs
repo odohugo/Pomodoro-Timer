@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
+using Avalonia.Interactivity;
 using Avalonia.Layout;
 using Avalonia.Markup.Xaml;
 using PomodoroTimer.Services;
@@ -23,6 +24,7 @@ public partial class CalendarView : UserControl
 
     private void PopulateCalendarGrid()
     {
+        CalendarGrid.Children.Clear();
         var currentDate = DateTime.Today;
         var startDate = currentDate.AddDays(-30);
         List<DateTime> dates = new List<DateTime>();
@@ -63,5 +65,11 @@ public partial class CalendarView : UserControl
             }
             else {column++;}
         }
+    }
+
+    private void ClearHistoryButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        _calendarService.ClearHistory();
+        PopulateCalendarGrid();
     }
 }
